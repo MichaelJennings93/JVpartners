@@ -10,6 +10,14 @@ const LINKS = [
   { to: '/contact', label: 'Contact' },
 ]
 
+const SERVICE_LINKS = [
+  { to: '/services/pre-deal', label: 'Pre-Deal' },
+  { to: '/services/leadership-advisory', label: 'Leadership Advisory' },
+  { to: '/services/leadership-change', label: 'Leadership Change' },
+  { to: '/services/talent-acquisition', label: 'Talent Acquisition' },
+  { to: '/functions', label: 'Functions' },
+]
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -117,9 +125,12 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[65] flex flex-col justify-center bg-ink lg:hidden"
+            className="fixed inset-0 z-[65] flex flex-col overflow-y-auto bg-ink lg:hidden"
           >
-            <nav className="container-jv flex flex-col gap-6" aria-label="Mobile">
+            <nav
+              className="container-jv flex min-h-full flex-col justify-center gap-5 py-28"
+              aria-label="Mobile"
+            >
               {LINKS.map((l, i) => (
                 <motion.div
                   key={l.to}
@@ -129,22 +140,44 @@ export default function Navbar() {
                 >
                   <Link to={l.to} className="flex items-baseline gap-4 text-off-white">
                     <span className="font-mono text-xs text-gold">0{i + 1}</span>
-                    <span className="text-[40px] font-bold leading-none tracking-[-0.02em]">
+                    <span className="text-[34px] font-bold leading-none tracking-[-0.02em]">
                       {l.label}
                     </span>
                   </Link>
+                  {l.label === 'Services' && (
+                    <motion.ul
+                      className="mt-4 flex flex-col gap-3 border-l border-charcoal-line pl-[44px]"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3, duration: 0.5 }}
+                    >
+                      {SERVICE_LINKS.map((s) => (
+                        <li key={s.to}>
+                          <Link
+                            to={s.to}
+                            className="flex items-baseline gap-3 text-[16px] font-medium tracking-[0.02em] text-mist transition-colors duration-300 ease-jv hover:text-gold"
+                          >
+                            <span aria-hidden className="text-gold">
+                              ·
+                            </span>
+                            {s.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
                 </motion.div>
               ))}
+              <motion.a
+                href="mailto:hello@jvpartners.com"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="mt-8 font-mono text-sm text-gold"
+              >
+                hello@jvpartners.com
+              </motion.a>
             </nav>
-            <motion.a
-              href="mailto:hello@jvpartners.com"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="container-jv absolute bottom-10 left-0 right-0 font-mono text-sm text-gold"
-            >
-              hello@jvpartners.com
-            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
