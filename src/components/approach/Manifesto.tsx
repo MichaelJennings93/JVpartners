@@ -71,7 +71,7 @@ export default function Manifesto() {
       {/* Dark photo plate with slow parallax */}
       <div className="manifesto-bg absolute -inset-y-24 inset-x-0" aria-hidden>
         <img
-          src="/approach-hands.jpg"
+          src="/JVpartners/approach-hands.jpg"
           alt=""
           className="h-full w-full object-cover opacity-[0.12]"
         />

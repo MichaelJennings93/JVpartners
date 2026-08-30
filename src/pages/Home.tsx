@@ -365,7 +365,7 @@ export default function Home() {
         {/* Background stack */}
         <div className="hero-bg absolute inset-0">
           <img
-            src="/hero-boardroom.jpg"
+            src="/JVpartners/hero-boardroom.jpg"
             alt=""
             className="h-full w-full object-cover"
             loading="eager"
@@ -375,7 +375,7 @@ export default function Home() {
 
         {/* JV monogram behind particles */}
         <img
-          src="/logo-monogram.png"
+          src="/JVpartners/logo-monogram.png"
           alt=""
           aria-hidden
           className="absolute right-[8%] top-1/2 hidden w-[320px] -translate-y-1/2 opacity-30 md:block"
@@ -546,7 +546,7 @@ export default function Home() {
         <div
           aria-hidden
           className="absolute inset-0 bg-cover bg-center opacity-[0.08]"
-          style={{ backgroundImage: "url('/texture-charcoal.jpg')" }}
+          style={{ backgroundImage: "url('/JVpartners/texture-charcoal.jpg')" }}
         />
         <div className="container-jv relative">
           <div className="grid grid-cols-2 lg:grid-cols-4">
@@ -637,7 +637,7 @@ export default function Home() {
         <div
           aria-hidden
           className="absolute inset-0 opacity-[0.05]"
-          style={{ backgroundImage: "url('/grain-texture.png')", backgroundSize: '256px' }}
+          style={{ backgroundImage: "url('/JVpartners/grain-texture.png')", backgroundSize: '256px' }}
         />
         <div className="container-jv relative">
           <div className="gold-rule mx-auto mb-14 h-px w-[120px] bg-gold" />

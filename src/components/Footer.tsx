@@ -30,7 +30,7 @@ export default function Footer() {
 
       <div className="container-jv relative z-10 grid gap-12 py-20 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <img src="/logo-lockup.png" alt="JV Partners" className="h-16 w-auto object-contain" />
+          <img src="/JVpartners/logo-lockup.png" alt="JV Partners" className="h-16 w-auto object-contain" />
           <p className="mt-6 max-w-[26ch] text-[15px] leading-relaxed text-mist">
             Clarity. Partnership. Enduring impact.
           </p>

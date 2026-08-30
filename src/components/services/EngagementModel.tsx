@@ -82,7 +82,7 @@ export default function EngagementModel() {
         aria-hidden
         className="absolute inset-0 opacity-[0.08]"
         style={{
-          backgroundImage: "url('/texture-charcoal.jpg')",
+          backgroundImage: "url('/JVpartners/texture-charcoal.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

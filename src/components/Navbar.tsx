@@ -56,7 +56,7 @@ export default function Navbar() {
       >
         <div className="container-jv flex h-full items-center justify-between">
           <Link to="/" className="flex items-center gap-3" aria-label="JV Partners home">
-            <img src="/logo-monogram.png" alt="" className="h-9 w-9 object-contain" />
+            <img src="/JVpartners/logo-monogram.png" alt="" className="h-9 w-9 object-contain" />
             <span className="text-[13px] font-extrabold uppercase tracking-[0.3em] text-off-white">
               JV&nbsp;Partners
             </span>

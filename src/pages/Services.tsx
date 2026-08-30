@@ -369,7 +369,7 @@ export default function Services() {
         <div
           aria-hidden
           className="absolute inset-0 opacity-[0.05]"
-          style={{ backgroundImage: "url('/grain-texture.png')", backgroundSize: '256px' }}
+          style={{ backgroundImage: "url('/JVpartners/grain-texture.png')", backgroundSize: '256px' }}
         />
         <div className="container-jv relative">
           <motion.div

@@ -162,7 +162,7 @@ function ImpactHero() {
       {/* Background plate */}
       <motion.div aria-hidden className="absolute inset-0" style={{ y }}>
         <motion.img
-          src="/sector-abstract.jpg"
+          src="/JVpartners/sector-abstract.jpg"
           alt=""
           initial={{ scale: 1.05 }}
           animate={{ scale: 1 }}
@@ -326,7 +326,7 @@ function SectorTile({ sector, index }: { sector: (typeof SECTORS)[number]; index
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center opacity-0 transition-all duration-700 ease-jv group-hover:scale-[1.03] group-hover:opacity-10"
-        style={{ backgroundImage: "url('/texture-charcoal.jpg')" }}
+        style={{ backgroundImage: "url('/JVpartners/texture-charcoal.jpg')" }}
       />
       {/* Gold frame draw on hover — 4 segments */}
       <span aria-hidden className="pointer-events-none absolute inset-0">
@@ -603,7 +603,7 @@ function CtaBand() {
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center opacity-[0.12]"
-        style={{ backgroundImage: "url('/texture-charcoal.jpg')" }}
+        style={{ backgroundImage: "url('/JVpartners/texture-charcoal.jpg')" }}
       />
       <div className="container-jv relative z-10 py-[88px] text-center md:py-40">
         <motion.h2

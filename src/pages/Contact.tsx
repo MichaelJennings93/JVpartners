@@ -201,7 +201,7 @@ export default function Contact() {
           className="absolute inset-0"
         >
           <img
-            src="/hero-boardroom.jpg"
+            src="/JVpartners/hero-boardroom.jpg"
             alt=""
             className="h-full w-full object-cover opacity-[0.12]"
           />
