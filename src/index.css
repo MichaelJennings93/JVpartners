@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --grain-black: #1F1F1F;
+    --ink: #191919;
+    --charcoal: #2A2A2A;
+    --charcoal-line: #3A3A3A;
+    --gold: #C9A05A;
+    --gold-dim: #8F7342;
+    --off-white: #F2F0EB;
+    --mist: #B9B5AC;
+    --background: 0 0% 12.2%;
+    --foreground: 40 14% 93%;
+    --card: 0 0% 16.5%;
+    --card-foreground: 40 14% 93%;
+    --popover: 0 0% 16.5%;
+    --popover-foreground: 40 14% 93%;
+    --primary: 36 47% 57%;
+    --primary-foreground: 0 0% 12.2%;
+    --secondary: 0 0% 16.5%;
+    --secondary-foreground: 40 14% 93%;
+    --muted: 0 0% 16.5%;
+    --muted-foreground: 40 6% 70%;
+    --accent: 36 47% 57%;
+    --accent-foreground: 0 0% 12.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 22.7%;
+    --input: 0 0% 22.7%;
+    --ring: 36 47% 57%;
+    --radius: 0.125rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    background-color: #1F1F1F;
+  }
+  body {
+    @apply bg-grain-black text-off-white font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: #C9A05A;
+    color: #1F1F1F;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-sans text-[12px] md:text-[13px] font-semibold uppercase text-gold;
+    letter-spacing: 0.32em;
+  }
+  .container-jv {
+    @apply mx-auto w-full max-w-[1280px];
+    padding-left: clamp(24px, 5vw, 80px);
+    padding-right: clamp(24px, 5vw, 80px);
+  }
+}
+
+@layer utilities {
+  .ease-jv {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* Film grain overlay */
+.grain-overlay {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url('/grain-texture.png');
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 90;
+  animation: grain-flicker 8s steps(10) infinite;
+}
+
+@keyframes grain-flicker {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-1%, 0.5%); }
+  40% { transform: translate(0.5%, -1%); }
+  60% { transform: translate(-0.5%, -0.5%); }
+  80% { transform: translate(1%, 1%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain-overlay {
+    animation: none;
+  }
+}
+
+/* Hero scroll-hint travelling dot */
+@keyframes scroll-dot-travel {
+  0% { transform: translate(-50%, -8px); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translate(-50%, 48px); opacity: 0; }
+}
+.scroll-dot {
+  animation: scroll-dot-travel 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-dot { animation: none; }
+}
