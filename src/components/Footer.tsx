@@ -10,11 +10,15 @@ const SITEMAP = [
 ]
 
 const SERVICES = [
-  'Transformation',
-  'Integration',
-  'M&A Advisory',
-  'HR & People',
-  'Talent Acquisition',
+  { to: '/services', label: 'Transformation' },
+  { to: '/services', label: 'Integration' },
+  { to: '/services', label: 'M&A Advisory' },
+  { to: '/services', label: 'HR & People' },
+  { to: '/services/talent-acquisition', label: 'Talent Acquisition' },
+  { to: '/services/pre-deal', label: 'Pre-Deal' },
+  { to: '/services/leadership-advisory', label: 'Leadership Advisory' },
+  { to: '/services/leadership-change', label: 'Leadership Change' },
+  { to: '/functions', label: 'Functions' },
 ]
 
 export default function Footer() {
@@ -56,12 +60,12 @@ export default function Footer() {
           <h3 className="eyebrow mb-6">Services</h3>
           <ul className="space-y-3">
             {SERVICES.map((s) => (
-              <li key={s}>
+              <li key={s.label}>
                 <Link
-                  to="/services"
+                  to={s.to}
                   className="text-[15px] text-mist transition-colors duration-300 ease-jv hover:text-off-white"
                 >
-                  {s}
+                  {s.label}
                 </Link>
               </li>
             ))}

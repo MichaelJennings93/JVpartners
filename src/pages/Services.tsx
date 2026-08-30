@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { motion, AnimatePresence } from 'framer-motion'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import EngagementModel from '@/components/services/EngagementModel'
+import CapabilityIndex from '@/components/services/CapabilityIndex'
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
@@ -298,6 +299,20 @@ export default function Services() {
                                   </li>
                                 ))}
                               </ul>
+                              {p.name === 'Talent Acquisition' && (
+                                <Link
+                                  to="/services/talent-acquisition"
+                                  className="group mt-8 inline-flex items-baseline gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-gold"
+                                >
+                                  Explore the practice
+                                  <span
+                                    aria-hidden
+                                    className="transition-transform duration-300 ease-jv group-hover:translate-x-1"
+                                  >
+                                    &rarr;
+                                  </span>
+                                </Link>
+                              )}
                             </motion.div>
                           </motion.div>
                         )}
@@ -312,7 +327,12 @@ export default function Services() {
       </section>
 
       {/* ================================================================
-          SECTION 3 — HOW ENGAGEMENTS RUN (GSAP scroll-scrubbed model)
+          SECTION 3 — THE DEAL LIFECYCLE (capability index)
+          ================================================================ */}
+      <CapabilityIndex />
+
+      {/* ================================================================
+          SECTION 4 — HOW ENGAGEMENTS RUN (GSAP scroll-scrubbed model)
           ================================================================ */}
       <EngagementModel />
 

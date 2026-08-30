@@ -637,6 +637,49 @@ function CtaBand() {
 
 /* --------------------------------- page ----------------------------------- */
 
+const CLIENTS = [
+  { name: 'TIS', src: '/JVpartners/clients/tis.jpg' },
+  { name: 'ABCA', src: '/JVpartners/clients/abca.jpg' },
+  { name: 'Asset Protection Group', src: '/JVpartners/clients/ap-group.jpg' },
+]
+
+function ClientWall() {
+  return (
+    <section className="border-t border-charcoal-line py-[88px] md:py-[120px]" aria-label="Client references">
+      <div className="container-jv">
+        <div className="flex items-baseline justify-between gap-6">
+          <span className="eyebrow">CLIENT REFERENCES</span>
+          <span className="hidden font-mono text-[11px] tracking-[0.2em] text-mist md:block">
+            A SAMPLE / MORE IN CONVERSATION
+          </span>
+        </div>
+        <div className="mt-10 grid gap-px overflow-hidden border border-charcoal-line bg-charcoal-line sm:grid-cols-3">
+          {CLIENTS.map((c, i) => (
+            <motion.div
+              key={c.name}
+              className="flex min-h-[160px] items-center justify-center bg-charcoal p-10 md:min-h-[200px]"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-15% 0px' }}
+              transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
+            >
+              <img
+                src={c.src}
+                alt={c.name}
+                className="max-h-[88px] w-auto max-w-full object-contain"
+                loading="lazy"
+              />
+            </motion.div>
+          ))}
+        </div>
+        <p className="mt-6 max-w-[60ch] font-mono text-[11px] leading-relaxed text-mist/70">
+          Selected clients and past clients. Detailed references shared in conversation.
+        </p>
+      </div>
+    </section>
+  )
+}
+
 export default function Impact() {
   return (
     <>
@@ -644,6 +687,7 @@ export default function Impact() {
       <StatsBand />
       <SectorsGrid />
       <NdaWall />
+      <ClientWall />
       <Timeline />
       <CtaBand />
     </>
